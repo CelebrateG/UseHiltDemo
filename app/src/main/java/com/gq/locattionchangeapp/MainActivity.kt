@@ -3,6 +3,7 @@ package com.gq.locattionchangeapp
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import com.gq.locattionchangeapp.data.Student
 import com.gq.locattionchangeapp.data.Truck
 import com.gq.locattionchangeapp.network.Api
@@ -24,8 +25,10 @@ class MainActivity : AppCompatActivity() {
     @Inject
     lateinit var student: Student
 
-    @Inject
-    lateinit var viewModel: TruckViewModel
+    //使用 @ViewModelInject 注解，则常规写法获取即可
+    val viewModel: TruckViewModel by lazy {
+        ViewModelProvider(this).get(TruckViewModel::class.java)
+    }
 
     //注入三方库
     @Inject
