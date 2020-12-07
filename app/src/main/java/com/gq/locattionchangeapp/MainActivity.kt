@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.gq.locattionchangeapp.data.Student
 import com.gq.locattionchangeapp.data.Truck
 import com.gq.locattionchangeapp.network.Api
+import com.gq.locattionchangeapp.viewmodel.TruckViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -22,6 +23,9 @@ class MainActivity : AppCompatActivity() {
     //注入
     @Inject
     lateinit var student: Student
+
+    @Inject
+    lateinit var viewModel: TruckViewModel
 
     //注入三方库
     @Inject
